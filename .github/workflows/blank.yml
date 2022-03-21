@@ -1,6 +1,8 @@
 name: with-md5
 on:
-    workflow_dispatch
+    workflow_dispatch:
+    schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
     uploads:
