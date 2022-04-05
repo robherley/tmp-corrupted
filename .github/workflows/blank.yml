@@ -68,7 +68,7 @@ jobs:
                 sleep "$MY_SLEEP"
 
             - name: Upload data
-              uses: konradpabjan/upload-artifact@main
+              uses: robherley/upload-artifact@main
               with:
                 name: art-data-${{ matrix.size }}
                 path: data-${{ matrix.size }}
