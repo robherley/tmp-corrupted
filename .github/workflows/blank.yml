@@ -1,4 +1,4 @@
-name: with-md5
+name: with-md5-and-crc64
 on:
     workflow_dispatch:
     schedule:
@@ -25,7 +25,7 @@ jobs:
         steps:
             - name: Generate
               env:
-                    DATA_SIZE: ${{ matrix.size }}
+                DATA_SIZE: ${{ matrix.size }}
               run: |
                 cat << EOF > test.py
                 #!/usr/bin/python
@@ -81,7 +81,7 @@ jobs:
 
             - name: Check
               env:
-                    DATA_SIZE: ${{ matrix.size }}
+                DATA_SIZE: ${{ matrix.size }}
               run: |
                 ls -l
                 md5sum "data-$DATA_SIZE"
