@@ -1,8 +1,8 @@
 name: with-md5-and-crc64
 on:
     workflow_dispatch:
-    schedule:
-    - cron: "*/5 * * * *"
+#     schedule:
+#     - cron: "*/5 * * * *"
 
 jobs:
     uploads:
@@ -68,13 +68,13 @@ jobs:
                 sleep "$MY_SLEEP"
 
             - name: Upload data
-              uses: robherley/upload-artifact@main
+              uses: yacaovsnc/upload-artifact@main
               with:
                 name: art-data-${{ matrix.size }}
                 path: data-${{ matrix.size }}
 
             - name: Upload md5
-              uses: actions/upload-artifact@v2
+              uses: yacaovsnc/upload-artifact@v2
               with:
                 name: art-data-${{ matrix.size }}-md5
                 path: data-${{ matrix.size }}.md5sum
